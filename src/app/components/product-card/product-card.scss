@@ -1,0 +1,36 @@
+.container{
+    display: flex;
+    flex-direction: column;
+    width: 200px;
+    border: solid 2px #222;
+    border-radius: 8px;
+    transition: 500ms;
+
+    .title, .price{
+        display: flex;
+        padding: 10px;
+        background-color: #222;
+        color: #fff;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        height: 50px;
+
+    }
+
+    img{
+        object-fit: cover;
+
+    }
+}
+
+.container:hover{
+    cursor: pointer;
+    transform: scale(1.05);
+    box-shadow: 0 0 30px #222;
+    transition: all 0.3s ease;
+
+    img{
+        background-color: #ff9500;
+    }
+}

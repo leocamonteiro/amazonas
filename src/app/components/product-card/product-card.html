@@ -1,0 +1,5 @@
+<div class="container">
+    <div class="title"> {{product.title}}</div>
+    <img [src]="product.thumbnail" alt="">
+    <div class="price"> Preço: {{ product.price | currency:'BRL':'symbol':'1.2-2' }} </div>
+</div>

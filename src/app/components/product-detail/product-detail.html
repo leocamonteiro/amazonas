@@ -1,0 +1,21 @@
+  <div class="container">
+    <div>
+      <img [src]="product()?.thumbnail" alt="Imagem do produto">
+    </div>
+
+    <div class="details">
+      <table>
+        <tr>
+          <td class="title-label">{{ product()?.title }}</td>
+        </tr>
+        <tr>
+          <td class="description-label"><span>Descrição:</span> {{ product()?.description }}</td>
+        </tr>
+        <tr class="price-label">
+          <td><span>Preço:</span> {{ product()?.price | currency:'BRL':'symbol':'1.2-2' }}</td>
+        </tr>
+      </table>
+
+      <button>Comprar</button>
+    </div>
+  </div>
