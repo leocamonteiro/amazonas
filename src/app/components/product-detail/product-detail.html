@@ -20,14 +20,16 @@
           <td><span>Preço:</span> {{ currentProduct.price | currency:'BRL':'symbol':'1.2-2' }}</td>
         </tr>
       </table>
+      
 
       <button (click)="addProductToCart(currentProduct.id)">Adicionar ao Carrinho</button>
+    </div>
       @if (showCartAnimation){
         <div class="cart-animation">
           Produto adicionado ao carrinho!
         </div>
 
       }
-    </div>
+
   </div>
 }
