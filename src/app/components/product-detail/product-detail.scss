@@ -1,8 +1,17 @@
+.page-wrapper{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
 .container{
     display: flex;
+    flex-direction: column;
     justify-content: center;
     padding: 20px;
     gap: 20px;
+    max-width: 500px;
 
     img{
         width: 100px;
@@ -28,7 +37,7 @@
         flex-direction: column;
         justify-content: space-between;
         gap: 10px;
-        max-width: 500px;
+
 
         table{
             height: 100%;
