@@ -45,7 +45,6 @@
 
         .price-label{
             display: flex;
-            justify-content: end;
         }
 
         td{
@@ -54,6 +53,12 @@
 
         span{
             font-weight: 700;
+        }
+        .button-td{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
         }
         button{
             background-color: #222;
