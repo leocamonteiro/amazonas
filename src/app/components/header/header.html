@@ -1,10 +1,16 @@
 <main>
-    <div>
-        <h1>Amazon<span>as</span></h1>
-    </div>
-    <div class="shopping-cart">
-        <mat-icon aria-hidden="false" fontIcon="shopping_cart" matBadge="15"></mat-icon>
+  <div class="menu-header">
+    <div (click)="headerMenuButtons('home')"><h1>Amazon<span>as</span></h1></div>
+    <div (click)="headerMenuButtons('home')"><p>Home</p></div>
+  </div>
 
-    </div>
+  <div class="shopping-cart" (click)="headerMenuButtons('checkout')">
+    <mat-icon
+      aria-hidden="false"
+      fontIcon="shopping_cart"
+      [matBadge]="cartCount"
+      matBadgeColor="accent"
+      matBadgeOverlap="false">
+    </mat-icon>
+  </div>
 </main>
-

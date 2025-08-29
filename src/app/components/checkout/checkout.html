@@ -1,1 +1,68 @@
-<p>checkout works!</p>
+<div class="page-wrapper">
+
+  <div class="container">
+    <div class="box">
+      <app-cart-summary></app-cart-summary>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="box">
+     
+    @if(!hasItems){
+      <p class="empty-cart-message">Inclua produtos no carrinho para prosseguir.</p>
+
+    }@else{     
+      <form [formGroup]="checkoutForm" (ngSubmit)="submitOrder()">
+        <table>
+          <tr>
+            <td class="form-label"><span>Nome:</span></td>
+            <td>
+              <input type="text" formControlName="fullName" placeholder="Digite seu nome completo">
+              @if (fullName?.invalid && fullName?.touched) {
+                <small class="error" *ngIf="fullName?.errors?.['required']">Nome é obrigatório.</small>
+                <small class="error" *ngIf="fullName?.errors?.['minlength']">Mínimo de 3 caracteres.</small>
+              }
+            </td>
+          </tr>
+
+          <tr>
+            <td class="form-label"><span>Endereço:</span></td>
+            <td>
+              <input type="text" formControlName="address" placeholder="Digite seu endereço">
+              @if (address?.invalid && address?.touched) {
+                <small class="error" *ngIf="address?.errors?.['required']">Endereço é obrigatório.</small>
+                <small class="error" *ngIf="address?.errors?.['minlength']">Mínimo de 5 caracteres.</small>
+              }
+            </td>
+          </tr>
+
+          <tr>
+            <td class="form-label"><span>E-mail:</span></td>
+            <td>
+              <input type="email" formControlName="email" placeholder="Digite seu e-mail">
+              @if (email?.invalid && email?.touched) {
+                <small class="error" *ngIf="email?.errors?.['required']">E-mail é obrigatório.</small>
+                <small class="error" *ngIf="email?.errors?.['email']">Formato de e-mail inválido.</small>
+              }
+            </td>
+          </tr>
+        </table>
+        
+        <button type="submit" [disabled]="checkoutForm.invalid">FINALIZAR COMPRA</button>
+      </form>
+      }
+    </div>
+  </div>
+
+<div class="container">
+  @if (orderCompleted) {
+    <div class="box-order-confirmation">
+        <h2>PEDIDO FINALIZADO!</h2>
+        <p>Obrigado pela sua compra!</p>
+  </div>
+  }
+</div>
+
+
+</div>

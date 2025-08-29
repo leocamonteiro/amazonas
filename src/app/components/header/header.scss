@@ -5,6 +5,7 @@ main{
     color: #fff;
     padding: 20px;
     align-items: center;
+    
     h1 span{
         color: #ff9500;
     }
@@ -14,6 +15,24 @@ main{
     h1:hover{
         cursor: pointer;
         color: #ff9500;
+    }
+
+    .menu-header{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 30px;
+
+        p{
+            font-weight: 400;
+            font-size: 16px;
+            transition: 500ms;
+        }
+
+        p:hover{
+            cursor: pointer;
+            color: #ff9500;
+        }
     }
 
     .shopping-cart{

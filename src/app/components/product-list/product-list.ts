@@ -1,33 +1,24 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { ProductService } from '../../services/product-service';
-import { Product } from '../../models/models';
 import { ProductCard } from '../product-card/product-card';
 import { Router } from '@angular/router';
+import { toSignal } from '@angular/core/rxjs-interop';
+import { Loading } from '../loading/loading';
 
 
 @Component({
   selector: 'app-product-list',
-  imports: [ ProductCard ],
+  imports: [ ProductCard, Loading ],
   templateUrl: './product-list.html',
   styleUrl: './product-list.scss'
 })
-export class ProductList implements OnInit{
-  public produtos: Product[] = []
+export class ProductList {
 
-  constructor (
-    private productService: ProductService,
-    private router: Router
-  ){}
+   private productService = inject(ProductService);
+   public produtos = toSignal(this.productService.getProducts());   
+   public router = inject(Router)
 
-  ngOnInit(): void {
-    this.productService.getProducts().subscribe( response =>{
-      this.produtos = response.products;
-      // console.log(this.produtos) Teste para verificar se o array chegou
-    })
-  }
-
-  verDetalhes(id: number): void {
+  openDetail(id: number): void {
     this.router.navigate(['/produto', id]);
   }
-
 }

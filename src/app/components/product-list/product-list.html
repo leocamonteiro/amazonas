@@ -1,7 +1,12 @@
-<main>
-        @for (produto of produtos; track produto.id) {
-            <div (click)="verDetalhes(produto.id)">
-                <app-product-card [product]="produto"></app-product-card>
-            </div>
-        }
-</main>
+@if(!produtos()){
+    <app-loading></app-loading>
+}
+<div class="container">
+    @for (produto of produtos(); track produto.id) {
+        <div (click)="openDetail(produto.id)">
+            <app-product-card [product]="produto"></app-product-card>
+        </div>
+    }
+</div>
+
+

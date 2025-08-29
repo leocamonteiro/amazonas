@@ -1,0 +1,18 @@
+@if (cartItems.length > 0) {
+  <h3>Carrinho ({{ cartItems.length }} itens)</h3>
+  <table>
+    @for (item of cartItems; track item.id) {
+      <tr>
+        <td>{{ item.title }}</td>
+        <td class="price-td">{{ item.price | currency:'BRL':'symbol':'1.2-2' }}</td>
+      </tr>
+      <!-- <li>{{ item.title }} - {{ item.price }}</li> -->
+    }
+      <tr>
+        <td class="total-td">TOTAL</td>
+        <td class="total-td">{{ total | currency:'BRL':'symbol':'1.2-2' }}</td>
+      </tr>
+  </table>
+}@else(){
+  <h3>Carrinho Vazio</h3>
+}

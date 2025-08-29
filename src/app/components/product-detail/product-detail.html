@@ -1,21 +1,33 @@
+@if(!currentProduct){
+    <app-loading></app-loading>
+}
+
+@if (currentProduct) {
   <div class="container">
     <div>
-      <img [src]="product()?.thumbnail" alt="Imagem do produto">
+      <img [src]="currentProduct.image" alt="Imagem do produto">
     </div>
 
     <div class="details">
       <table>
         <tr>
-          <td class="title-label">{{ product()?.title }}</td>
+          <td class="title-label">{{ currentProduct.title | uppercase }}</td>
         </tr>
         <tr>
-          <td class="description-label"><span>Descrição:</span> {{ product()?.description }}</td>
+          <td class="description-label"><span>Descrição:</span> {{ currentProduct.description }}</td>
         </tr>
         <tr class="price-label">
-          <td><span>Preço:</span> {{ product()?.price | currency:'BRL':'symbol':'1.2-2' }}</td>
+          <td><span>Preço:</span> {{ currentProduct.price | currency:'BRL':'symbol':'1.2-2' }}</td>
         </tr>
       </table>
 
-      <button>Comprar</button>
+      <button (click)="addProductToCart(currentProduct.id)">Adicionar ao Carrinho</button>
+      @if (showCartAnimation){
+        <div class="cart-animation">
+          Produto adicionado ao carrinho!
+        </div>
+
+      }
     </div>
   </div>
+}

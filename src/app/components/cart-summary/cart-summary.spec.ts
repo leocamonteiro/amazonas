@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { NotFound } from './not-found';
+import { CartSummary } from './cart-summary';
 
-describe('NotFound', () => {
-  let component: NotFound;
-  let fixture: ComponentFixture<NotFound>;
+describe('CartSummary', () => {
+  let component: CartSummary;
+  let fixture: ComponentFixture<CartSummary>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [NotFound]
+      imports: [CartSummary]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(NotFound);
+    fixture = TestBed.createComponent(CartSummary);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
