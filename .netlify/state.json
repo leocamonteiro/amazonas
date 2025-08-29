@@ -1,0 +1,20 @@
+{
+	"geolocation": {
+		"data": {
+			"city": "Caicó",
+			"country": {
+				"code": "BR",
+				"name": "Brazil"
+			},
+			"subdivision": {
+				"code": "RN",
+				"name": "Rio Grande do Norte"
+			},
+			"timezone": "America/Fortaleza",
+			"latitude": -6.4453,
+			"longitude": -37.0444,
+			"postalCode": "59300"
+		},
+		"timestamp": 1756430519672
+	}
+}
